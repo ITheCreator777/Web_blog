@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +41,7 @@
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Вход</a>
                 <a class="nav-item nav-link" href="{% url 'register' %}">Регистрация</a>
-              {% endif %}
+                {% endif %}
             </div>
           </div>
         </div>
@@ -59,13 +59,14 @@
           {% endif %}
           {% block content %}{% endblock %}
         </div>
+        {% if user.is_authenticated %}
         <div class="col-md-4">
           <div class="content-section">
             <h3>Разделы</h3>
             <p class='text-muted'>новости и события
               <ul class="list-group">
                 <li class="list-group-item list-group-item-light">Новые записи</li>
-                <li class="list-group-item list-group-item-light">Объявления</li>
+                <li class="list-group-item list-group-item-light" ><a style="color: gray;" href="{% url 'ads' %}" >Объявления</a></li>
                 <li class="list-group-item list-group-item-light">Соревнования</li>
                 <li class="list-group-item list-group-item-light">Встречи участников</li>
               </ul>
@@ -73,7 +74,7 @@
           </div>
         </div>
       </div>
-
+      {% endif %}
     </main>
     <!-- Футер закреплен внизу, независимо от количества постов на странице -->
     <footer class="text-center bg-dark">

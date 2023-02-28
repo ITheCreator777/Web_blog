@@ -7,7 +7,9 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #fafafa;
+    background: url("/static/img/masony.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
     color: #333333;
     margin-top: 5rem;
     font-family: Roboto;
@@ -27,7 +29,7 @@ ul {
 }
 
 .bg-blue {
-    background-color: #6699cc;
+    background-color: #272727;
 }
 
 .site-header .navbar-nav .nav-link {
